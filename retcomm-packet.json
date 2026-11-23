@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "hercs-adventures-psx",
+  "name": "Herc's Adventures",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "hercs-adventures-recomp",
+  "rom_identity": {
+    "crc32": [
+      "01d2204e"
+    ],
+    "md5": [
+      "75e0329e710b058a973bf93db1884b9b"
+    ],
+    "sha1": [
+      "252d34d47975f0852d5698c0cc7c48b3678f5913"
+    ],
+    "disc_serials": [
+      "SLES-00653"
+    ],
+    "sizes": [
+      356497344
+    ],
+    "filenames": [
+      "Herc's Adventures (Europe).cue",
+      "Herc's Adventures (Europe).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "57b74f1c31ff07e7dd7fc23bb9cfe686dc0699181953ebda4aea5e610ceaed98"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH5552.BIN",
+    "profile": "SCPH5552",
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/hercs-adventures-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "hercs-adventures-*-windows-x64.zip",
+      "linux-x64": "hercs-adventures-*-linux-x64.zip",
+      "macos-arm64": "hercs-adventures-*-macos-arm64.zip",
+      "macos-x64": "hercs-adventures-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "hercs_adventures.exe",
+    "linux": "hercs_adventures",
+    "macos": "hercs_adventures"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/hercs-adventures-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

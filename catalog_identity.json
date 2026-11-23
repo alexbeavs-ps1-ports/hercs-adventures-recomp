@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Herc's Adventures",
+    "id": "SLES-00653",
+    "boot_exe": "SLES_006.53"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Herc's Adventures (Europe).cue",
+    "bin_name": "Herc's Adventures (Europe).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 356497344,
+      "md5": "75e0329e710b058a973bf93db1884b9b",
+      "sha1": "252d34d47975f0852d5698c0cc7c48b3678f5913",
+      "crc32": "01d2204e"
+    },
+    "disc_fp": "57b74f1c31ff07e7dd7fc23bb9cfe686dc0699181953ebda4aea5e610ceaed98"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80013904",
+    "text_size": "0x000E4000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1748,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

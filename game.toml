@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Herc's Adventures"
+id = "SLES-00653"
+players = 1
+exe = "disc/SLES_006.53"
+disc = "disc/Herc's Adventures (Europe).cue"
+discs = ["disc/Herc's Adventures (Europe).cue"]
+disc_serials = ["SLES-00653"]
+load_address = "0x80010000"
+entry_pc = "0x80013904"
+text_size = "0x000E4000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Herc's Adventures (Europe).bin"
+cue_name = "Herc's Adventures (Europe).cue"
+boot_exe = "SLES_006.53"
+known_sizes = [356497344]
+known_md5 = [
+  "75e0329e710b058a973bf93db1884b9b",
+]
+known_sha1 = [
+  "252d34d47975f0852d5698c0cc7c48b3678f5913",
+]
+known_crc32 = [
+  "01d2204e",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Herc's Adventures Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "57b74f1c31ff07e7dd7fc23bb9cfe686dc0699181953ebda4aea5e610ceaed98"
